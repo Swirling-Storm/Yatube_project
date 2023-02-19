@@ -13,7 +13,7 @@
     <meta name="msapplication-TileColor" content="#000">
     <meta name="theme-color" content="#ffffff">
     <!-- Подключен файл со стандартными стилями бустрап -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <title>{{title}}</title>
   </head>
   <body>
@@ -22,11 +22,9 @@
     </header>
     <main>
       <!-- класс py-5 создает отступы сверху и снизу блока -->
-      <div class="container py-5">
         {% block content %}
-          А где, а где
+          А где контент?
         {% endblock %}
-      </div>  
     </main>
     <footer class="page-footer font-small blue border-top">
       {% include 'includes/footer.html' %}
