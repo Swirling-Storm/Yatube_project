@@ -5,21 +5,21 @@
 {% endblock %}
 
 {% block content %}
-  <div class="container py-5">
-    <h1>Лев Толстой - зеркало русской революции.</h1>
-    <p>Группа тайных поклонников графа</p>
+<div class="container py-5">
+  <h1>Лев Толстой – зеркало русской революции.</h1>
+  <p>Группа тайных поклонников графа.</p>
 
-    {% for post in posts %}
+  {% for post in posts %}
     <article>
-      <ui>
-        <li>Автор: {{ post.author.get_full_name }}<li>
-        <li>Дата ппубликации: {{ post.pub_date|date:"d E Y"}}<li>
-      <ui>
+      <ul>
+        <li>Автор: {{ post.author.get_full_name }}</li>
+        <li>Дата публикации: {{ post.pub_date|date:"d E Y" }}</li>
+      </ul>
       <p>
         {{ post.text }}
       </p>
-    <article>
+    </article>
     {% if not forloop.last %}<hr>{% endif %}
-    {% endfor %}
-  </div>
+  {% endfor %}
+</div>
 {% endblock %}
