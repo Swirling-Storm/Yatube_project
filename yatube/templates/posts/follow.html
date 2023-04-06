@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+{% block title %}Это страница с подписками{% endblock %}
+{% block header %}Последние обновления на сайте{% endblock %}
+
+{% block content %}
+{% load cache %}
+  <div class="container py-5">
+    {% include 'posts/includes/switcher.html' %}
+      {% for post in page_obj %}
+        {% include 'posts/includes/post.html' %}
+      {% endfor %}
+  {% include 'posts/includes/paginator.html' %}
+</div>
+{% endblock %}

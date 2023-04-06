@@ -1,0 +1,19 @@
+{% if user.username == author.username %}
+  <p>Это вы</p>
+{% else %}
+  {% if following %}
+    <a
+      class="btn btn-lg btn-danger"
+      href="{% url 'posts:profile_unfollow' author.username %}" role="button"
+    >
+      Отписаться
+    </a>
+  {% else %}
+    <a
+      class="btn btn-lg btn-success"
+      href="{% url 'posts:profile_follow' author.username %}" role="button"
+    >
+      Подписаться
+    </a>
+  {% endif %}
+{% endif %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %} 
+{% block title %}Обо мне{% endblock title %}
+{% block content %}
+{% load static%}
+      <div align="center">
+        <h3>Обо мне</h3>
+          <p style="border: 3px solid lightsalmon; padding: 10px; width: 700px">
+            Привет! Я - Егор и я учусь на Яндекс Практикуме.<br>
+            На момент написания этого текста мне 23 года.<br>
+            Я учусь программированию, потому что <del>хочу взломать Пентагон</del><br>
+            мне нравится работать головой, постоянно разбираться в чем-то новом,<br>
+            а также новые возможности технологий...<br>
+            <small>...ну и работать из дома.</small>
+          </p>
+        <h3>Как со мной связаться?Смотри ниже</h3>
+          <p style="border: 3px solid lightsalmon; padding: 10px; width: 700px">
+            <a href="https://github.com/Swirling-Storm">Это GitHub</a><br>
+            <a href="https://t.me/chmmoshka">Мой Telegram</a><br>
+            <a href="https://vk.com/egor_kabchik">Вконтакте</a><br>
+          </p>
+        <p style="border: 3px solid lightsalmon; padding: 10px; width: 700px">
+          Это мой друг и напарник в обучении, его зовут Беляш. <br>
+          Да, странное имя, но думаю оно ему подходит.<br>
+          <img src="{% static 'img/belyash.jpg' %}" alt="Картинка" 
+          width="200" height="272">
+        </p>
+      </div>
+{% endblock %}
