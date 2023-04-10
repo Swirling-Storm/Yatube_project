@@ -15,7 +15,7 @@ def paginator(request, post_list):
     return paginator.get_page(page_number)
 
 
-@cache_page(20, key_prefix='index_page')
+@cache_page(20)
 def index(request):
     post_list = Post.objects.all()
     context = {
@@ -80,6 +80,15 @@ def post_create(request):
         'form': form
     }
     return render(request, 'posts/create_post.html', context)
+
+
+@login_required
+def post_delete(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    if post.author != request.user:
+        return redirect('posts:post_detail', post_id)
+    post.delete()
+    return redirect('posts:profile', post.author)
 
 
 @login_required

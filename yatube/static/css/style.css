@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed&display=swap');
-
-body {
+*
+{
     font-family: 'Sofia Sans Semi Condensed', sans-serif;
     font-size: 20px;
 }
